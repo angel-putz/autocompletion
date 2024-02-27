@@ -13,12 +13,16 @@ $opt = [
 ];
 $pdo = new PDO($dsn, $user, $pass, $opt);
 
-$id = $_GET['id'];
+$term = $_GET['term'];
 
-$stmt = $pdo->prepare("SELECT * FROM pokemon WHERE id = ?");
-$stmt->execute([$id]);
-$result = $stmt->fetch();
+$stmt = $pdo->prepare("SELECT * FROM pokemon WHERE name LIKE ? ORDER BY CASE WHEN name LIKE ? THEN 0 ELSE 1 END, name");
+$stmt->execute(["%$term%", "$term%"]);
+$results = $stmt->fetchAll();
 
-echo '<h1>' . $result['name'] . '</h1>';
-echo '<p>' . $result['type'] . '</p>';
+$data = [];
+foreach ($results as $row) {
+    $data[] = ['label' => $row['name'], 'value' => $row['name'], 'id' => $row['id']];
+}
+
+echo json_encode($data);
 ?>

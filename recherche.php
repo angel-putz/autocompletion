@@ -15,11 +15,11 @@ $pdo = new PDO($dsn, $user, $pass, $opt);
 
 $search = $_GET['search'];
 
-$stmt = $pdo->prepare("SELECT * FROM pokemon WHERE name LIKE ?");
-$stmt->execute(["%$search%"]);
+$stmt = $pdo->prepare("SELECT * FROM pokemon WHERE name LIKE ? ORDER BY CASE WHEN name LIKE ? THEN 0 ELSE 1 END, name");
+$stmt->execute(["%$search%", "$search%"]);
 $results = $stmt->fetchAll();
 
 foreach ($results as $row) {
-    echo '<a href="element.php?id=' . $row['id'] . '">' . $row['name'] . ', ' . $row['type'] . '</a><br>';
+    echo '<p><a href="element.php?id=' . $row['id'] . '">' . $row['name'] . '</a></p>';
 }
 ?>
