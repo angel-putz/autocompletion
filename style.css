@@ -1,0 +1,112 @@
+/* This styles the body of the page */
+/* ce style pour le corps de la page */
+
+.moteur_de_recherche {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+}
+
+/* This styles the search form */
+/* ce style pour le formulaire de recherche */
+
+form {
+  display: flex;
+  width: 50%;
+}
+
+/* This styles the search input */
+/* ce style pour l'entrée de recherche */
+
+#search {
+  flex-grow: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+/* This styles the submit button */
+/* ce style pour le bouton d'envoie */
+
+input[type="submit"] {
+  padding: 10px 20px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+}
+
+/* This changes the style of the submit button when you hover over it */
+/* ce style change lorsque vous survolez le bouton d'envoie */
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* This styles the name of the Pokemon */
+/* ce style pour le nom du Pokemon */
+
+.nom_pokemon {
+  text-align: center;
+  font-size: 2em;
+  color: #333;
+  margin-top: 5vh;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* This styles the type of the Pokemon */
+/* ce style pour le type du Pokemon */
+
+.type_pokemon {
+  text-align: center;
+  font-size: 1.5em;
+  color: #666; 
+  margin-top: 1vh; 
+  font-style: italic; 
+}
+
+/* This styles the search results container */
+/* ce style pour le conteneur des résultats de recherche */
+
+.recherhche_pokemon {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+  font-size: large;
+  font-weight: bold;
+  width: 50%;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+/* This styles each search result */
+/* ce style pour chaque résultat de recherche */
+.recherhche_pokemon a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px;
+  margin: 10px 0;
+  width: 50%;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+/* This changes the style of a search result when you hover over it */
+/* ce style change lorsque vous survolez un résultat de recherche */
+.recherhche_pokemon a:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
