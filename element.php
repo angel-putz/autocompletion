@@ -1,9 +1,9 @@
 <?php
-$host = 'localhost'; // on définit le nom de l'hôte
-$db   = 'autocompletion'; // on définit le nom de la base de données
-$user = 'root'; // on définit le nom d'utilisateur
-$pass = ''; // on définit le mot de passe
-$charset = 'utf8mb4'; // on definit le charset pour éviter les problèmes d'encodage
+$host = 'localhost'; // on définit le nom de l'hôte || we define the name of the host
+$db   = 'autocompletion'; // on définit le nom de la base de données || we define the name of the database
+$user = 'root'; // on définit le nom d'utilisateur || we define the username
+$pass = ''; // on définit le mot de passe || we define the password
+$charset = 'utf8mb4'; // on definit le charset pour éviter les problèmes d'encodage || we define the charset to avoid encoding problems
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset"; // on se connecte à la base de données
 $opt = [
