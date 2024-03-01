@@ -19,10 +19,10 @@ $stmt = $pdo->prepare("SELECT * FROM pokemon WHERE name LIKE ? ORDER BY CASE WHE
 $stmt->execute(["%$term%", "$term%"]); // on exécute la requête SQL || we execute the SQL query
 $results = $stmt->fetchAll(); // on met les résultats dans un tableau || we put the results in an array
 
-$data = []; // on crée un tableau vide qui va contenir les résultats de la requête SQL
+$data = []; // on crée un tableau vide qui va contenir les résultats de la requête SQL || we create an empty array that will contain the results of the SQL query
 foreach ($results as $row) {
-    $data[] = ['label' => $row['name'], 'value' => $row['name'], 'id' => $row['id']]; // on met les résultats dans le tableau
+    $data[] = ['label' => $row['name'], 'value' => $row['name'], 'id' => $row['id']]; // on met les résultats dans le tableau || we put the results in the table
 }
 
-echo json_encode($data); // on renvoie le tableau en format JSON
+echo json_encode($data); // on renvoie le tableau en format JSON || we return the table in JSON format
 ?>
